@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="uk-height-1-1">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cnc</title>
+  
+<!-- HTML5 for IE6-8 support 
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> -->
+
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- UIkit -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
+
+<!-- Clusterize -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.js"></script>
+
+<!-- codemirror -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'codemirror/lib/codemirror.css') }}"/>
+<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'codemirror/theme/eclipse.css') }}"/>-->
+<script src="{{ url_for('static', filename = 'codemirror/lib/codemirror.js') }}"></script>
+<!--<script src="{{ url_for('static', filename = 'codemirror/mode/javascript/javascript.js') }}"></script>-->
+
+<!-- my css -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}"/>
+
+
+</head>
+
+<body>
+
+<nav><a class="menu" uk-navbar-toggle-icon href="#offcanvas" uk-toggle></a></nav>
+
+<main id="webgl"></main>
+
+<footer><p>#</p></footer>
+
+
+
+<section id="offcanvas" uk-offcanvas="flip: true; overlay: false; mode: push;">
+    <div class="uk-offcanvas-bar">
+        
+        
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        
+          <ul class="uk-tab" data-uk-tab="{connect:'#my-id'}">
+            <li><a href="" uk-icon="icon: pencil"></a></li>
+            <li><a href="" uk-icon="icon: info"></a></li>
+            <li><a href="" uk-icon="icon: settings"></a></li>
+          </ul>
+          <ul id="my-id" class="uk-switcher uk-margin">
+            <li>{% include 'editor.html' %}</li>
+            <li>{% include 'examples.html' %}</li>
+            <li></li>
+          </ul>
+
+
+    </div>
+</section>
+
+
+
+
+<!-- Load three.js -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'three/r89/three.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'three/r89/TrackballControls.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'three/r89/Detector.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'three/r89/STLLoader.js') }}"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/draw.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/load_examples.js') }}"></script>
+
+<script>
+/*
+var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+  lineNumbers: true,
+  textWrapping: true,
+  height: "500px",
+  matchBrackets: true,
+  theme: 'eclipse',
+  mode: 'application/shell'
+  
+  //indentUnit: 4,
+  //height: "150px",
+  //parserfile: "parsesql.js",
+  //path: "js/code/js/",
+  //stylesheet: "js/code/css/sqlcolors.css",
+});
+*/
+</script>
+
+</body>
+</html>
