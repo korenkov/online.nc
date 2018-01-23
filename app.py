@@ -27,7 +27,7 @@ def get_xyz():
 
     state, msg = haas.preprocessing(data['gcode'])
     if not state:
-        print "Ошибка!!! ", msg
+        print ("Ошибка!!! ", msg)
     else:
         CLData = haas.processing(msg)
         return jsonify(CLData)

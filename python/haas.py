@@ -191,7 +191,7 @@ def toolpath(s0, s1):
             elif (s1.i != None) and (s1.j == None):
                 s1.j = 0
             elif (s1.i == None) and (s1.j == None):
-                print 'Error'
+                print ('Error')
                 
             # IF I-J-K
             s1.xc = s0.x + s1.i
